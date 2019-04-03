@@ -1,0 +1,112 @@
+﻿windows 10 pro + enterpri.
+docker machine not needed often if we use docker CE(win 10 and above)
+Docker Engine = Docker Deamon
+Pull image:
+docker pull ImageName
+
+Images list:
+docker images
+
+Run image as a container:
+docker run ImageName
+
+List of running containers:
+docker ps
+
+List of all containers:
+docker ps -a 
+
+Remove container:
+docker rm container_Initials
+
+Remove image:
+docker rmi Image_Initial
+
+
+pull image from hub
+list of images:
+docker images
+
+run the image:
+docker run -p 80:80 ImageName
+
+(80:90 ->connect port 80 on the machine to 90 on container.)
+stop docker client tool:
+docker stop d7
+
+ list of running container:
+docker ps
+
+list of all containers:
+docker ps -a
+
+remove container:
+docker rm d7
+
+list of images:
+docker images
+
+delete image:
+docker rmi imageid_Initial
+
+(image will exist even we have delete container, as we can use that image in other container. so delete it seperately if not required.)
+Docker Compose Build process can actually generate images that we can use to create containers.
+
+
+Docker compose command (will work based on yml file content):
+
+1. Build services and images(all):
+docker-compose build
+docker-compose build mongo //only mongo srv.
+
+
+2. Images to running container:
+docker-compose up
+docker-compose up --no-deps node
+//dont up dependencies, only node
+
+3. Tear down containers:
+docker-compose down //(stop and remove all containers.)
+
+docker-compose down --rmi all --volumes //(also removes all images and volumes.)
+
+
+
+4. view logs:
+docker-compose logs
+
+5. list of containers running:
+docker-compose ps
+
+6. Stop all the services:
+docker-compose stop
+
+7. Start all the services:
+docker-compose start
+
+8. Remove containers that are making services:
+docker-compose rm
+
+9. 
+
+Docker-compose for aspnetcore
+Windows Kubernetties config
+1. Know kubnet. version:
+kubectl version
+
+2. Get info about deployent or services or pods or nods:
+kubectl get [deployments | services |pods]
+
+3. Running one container:
+kubectl run nginx-server --image=nginx:alpine
+
+4. Apply deployment files and services:
+kubectl apply -f [fileName | folderName]
+
+5. Port forward from pod:
+kubectl port-forward [name-of-pod]  8080:80
+
+
+
+
+
